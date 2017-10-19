@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OdeToFood.Entities;
 using OdeToFood.Services;
 using OdeToFood.ViewModels;
@@ -54,10 +53,10 @@ namespace OdeToFood.Controllers
                 Name = model.Name,
                 Cuisine = model.Cuisine
             };
-            
+
             restaurant = _restaurantData.Add(restaurant);
 
-            return View(nameof(Details), restaurant);
+            return RedirectToAction(nameof(Details), new { Id = restaurant.Id });
         }
     }
 }
