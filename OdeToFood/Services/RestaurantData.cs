@@ -6,9 +6,10 @@ namespace OdeToFood.Services
 {
     public class InMemoryRestaurantData : IRestaurantData
     {
-        private List<Restaurant> _restaurants;
+        // BAD practice: not thread safe!
+        private static List<Restaurant> _restaurants;
 
-        public InMemoryRestaurantData()
+        static InMemoryRestaurantData()
         {
             _restaurants = new List<Restaurant>
             {
@@ -26,6 +27,14 @@ namespace OdeToFood.Services
         public IEnumerable<Restaurant> GetAll()
         {
             return _restaurants;
+        }
+
+        public Restaurant Add(Restaurant restaurant)
+        {
+            restaurant.Id = _restaurants.Max(r => r.Id) + 1;
+            _restaurants.Add(restaurant);
+
+            return restaurant;
         }
     }
 }
