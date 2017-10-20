@@ -15,11 +15,11 @@ namespace OdeToFood.Entities
     {
         public int Id { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Please enter a name for the restaurant")]
-        [MaxLength(80)]
-        [Display(Name = "Restaurant Name")]
+        [Required, MaxLength(80)]
+        [Display(Name = "Restaurant name")]
         public string Name { get; set; }
 
+        [Display(Name = ("Type of cuisine"))]
         public CuisineType Cuisine { get; set; }
     }
 }
