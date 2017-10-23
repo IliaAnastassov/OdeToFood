@@ -1,25 +1,28 @@
-﻿@using OdeToFood.Controllers
-@model OdeToFood.ViewModels.HomePageViewModel
+﻿@model HomePageViewModel
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Ode To Food</title>
-</head>
-<body>
-    <h1>Welcome!</h1>
+@{
+    ViewBag.Title = "Home";
+}
+
+<h1>Welcome!</h1>
+<table>
+    @foreach (var restaurant in Model.Restaurants)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Details", nameof(HomeController.Details), new { Id = restaurant.Id })
+            </td>
+            <td>@restaurant.Name</td>
+        </tr>
+    }
+</table>
+
+@Html.ActionLink("Add", nameof(HomeController.Create))
+
+@section header {
     <h3>@Model.Message</h3>
-    <table>
-        @foreach (var restaurant in Model.Restaurants)
-        {
-            <tr>
-                <td>
-                    @Html.ActionLink("Details", nameof(HomeController.Details), new { Id = restaurant.Id })
-                </td>
-                <td>@restaurant.Name</td>
-            </tr>
-        }
-    </table>
+}
 
-    @Html.ActionLink("Add", nameof(HomeController.Create))
-</body>
-</html>
+@section footer {
+    <h5>All rights reserved</h5>
+}

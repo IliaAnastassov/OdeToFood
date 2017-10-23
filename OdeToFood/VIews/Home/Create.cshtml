@@ -1,5 +1,8 @@
-﻿@using OdeToFood.Entities
-@model Restaurant
+﻿@model Restaurant
+
+@{
+    ViewBag.Title = "Create";
+}
 
 <h1>Create a new restaurant</h1>
 
@@ -19,6 +22,7 @@
         </div>
         <div>
             <input type="submit" value="Save" />
+            @Html.ActionLink("Cancel", nameof(HomeController.Index))
         </div>
     }
 
