@@ -10,19 +10,15 @@
     {
         <tr>
             <td>
-                @Html.ActionLink("Details", nameof(HomeController.Details), new { Id = restaurant.Id })
+                <a asp-action="Details" asp-route-id="@restaurant.Id">Details</a>
             </td>
             <td>@restaurant.Name</td>
         </tr>
     }
 </table>
 
-@Html.ActionLink("Add", nameof(HomeController.Create))
+<a asp-action="Create">Create</a>
 
 @section header {
     <h3>@Model.Message</h3>
-}
-
-@section footer {
-    <h5>All rights reserved</h5>
 }
