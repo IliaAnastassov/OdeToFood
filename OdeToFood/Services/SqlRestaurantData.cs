@@ -16,7 +16,6 @@ namespace OdeToFood.Services
         public Restaurant Add(Restaurant restaurant)
         {
             _context.Restaurants.Add(restaurant);
-            _context.SaveChanges();
 
             return restaurant;
         }
@@ -29,6 +28,11 @@ namespace OdeToFood.Services
         public IEnumerable<Restaurant> GetAll()
         {
             return _context.Restaurants;
+        }
+
+        public void Commit()
+        {
+            _context.SaveChanges();
         }
     }
 }

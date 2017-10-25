@@ -36,5 +36,10 @@ namespace OdeToFood.Services
 
             return restaurant;
         }
+
+        public void Commit()
+        {
+            // NA
+        }
     }
 }

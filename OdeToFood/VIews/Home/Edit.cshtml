@@ -4,10 +4,10 @@
     ViewBag.Title = "Create";
 }
 
-<h1>Create a new restaurant</h1>
+<h1>Edit @Model.Name</h1>
 
 <div>
-    <form>
+    <form method="post" asp-antiforgery="true">
         <div>
             <label asp-for="Name"></label>
             <input asp-for="Name" />
