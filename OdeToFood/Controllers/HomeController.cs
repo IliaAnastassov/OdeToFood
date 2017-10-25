@@ -51,12 +51,9 @@ namespace OdeToFood.Controllers
         {
             if (ModelState.IsValid)
             {
-                var restaurant = new Restaurant()
-                {
-                    Name = model.Name,
-                    Cuisine = model.Cuisine
-                };
-
+                var restaurant = new Restaurant();
+                restaurant.Name = model.Name;
+                restaurant.Cuisine = model.Cuisine;
                 restaurant = _restaurantData.Add(restaurant);
                 _restaurantData.Commit();
 
