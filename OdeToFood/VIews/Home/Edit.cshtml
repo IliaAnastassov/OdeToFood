@@ -1,10 +1,10 @@
 ﻿@model Restaurant
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = $"Edit {Model.Name}";
 }
 
-<h1>Edit @Model.Name</h1>
+<h1>Editing: @Model.Name</h1>
 
 <div>
     <form method="post" asp-antiforgery="true">

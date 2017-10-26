@@ -5,6 +5,12 @@
 }
 
 <h1>Welcome!</h1>
+
+@foreach (var restaurant in Model.Restaurants)
+{
+    Html.Partial("_Summary", restaurant);
+}
+
 <table>
     @foreach (var restaurant in Model.Restaurants)
     {
