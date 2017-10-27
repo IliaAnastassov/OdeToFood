@@ -13,7 +13,7 @@
         @RenderBody()
     </div>
     <footer>
-        <h5>All rights reserved &copy; @DateTime.Now.Year</h5>
+        @await Component.InvokeAsync("Greeting")
     </footer>
 </body>
 </html>

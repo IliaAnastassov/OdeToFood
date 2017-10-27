@@ -32,7 +32,7 @@ namespace OdeToFood
             services.AddMvc();
             services.AddSingleton(Configuration);
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddScoped<IRestaurantData, SqlRestaurantData>();
+            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
             services.AddDbContext<OdeToFoodDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("OdeToFood")));
         }
 
