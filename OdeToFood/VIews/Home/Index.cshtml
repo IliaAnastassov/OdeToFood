@@ -8,20 +8,9 @@
 
 @foreach (var restaurant in Model.Restaurants)
 {
-    Html.Partial("_Summary", restaurant);
+    @Html.Partial("_Summary", restaurant);
 }
 
-<table>
-    @foreach (var restaurant in Model.Restaurants)
-    {
-        <tr>
-            <td>@restaurant.Name</td>
-            <td>
-                <a asp-action="Details" asp-route-id="@restaurant.Id">Details</a>
-                <a asp-action="Edit" asp-route-id="@restaurant.Id">Edit</a>
-            </td>
-        </tr>
-    }
-</table>
-
-<a asp-action="Create">Create</a>
+<div>
+    <a asp-action="Create">Create</a>
+</div>
