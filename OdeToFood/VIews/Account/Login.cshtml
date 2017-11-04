@@ -1,6 +1,9 @@
-﻿@model RegisterUserViewModel
+﻿@model LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
 
-<h2>Register</h2>
+<h2>Login</h2>
 
 <form method="post" asp-antiforgery="true">
 
@@ -19,13 +22,11 @@
     </div>
 
     <div>
-        <label asp-for="ConfirmPassword"></label>
-        <input asp-for="ConfirmPassword" />
-        <span asp-validation-for="ConfirmPassword"></span>
+        <label asp-for="IsPersistant"></label>
+        <input asp-for="IsPersistant" />
+        <span asp-validation-for="IsPersistant"></span>
     </div>
 
-    <div>
-        <input type="submit" value="Register" />
-    </div>
+    <input type="submit" value="Login" />
 
 </form>
