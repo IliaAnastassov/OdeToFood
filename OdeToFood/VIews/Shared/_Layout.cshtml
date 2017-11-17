@@ -17,11 +17,13 @@
             </div>
         </div>
     </nav>
-    <div>
+    <div class="container">
         @RenderBody()
+        <footer>
+            <div>
+                &copy; @DateTime.Now.Year
+            </div>
+        </footer>
     </div>
-    <footer>
-        @await Component.InvokeAsync("Greeting")
-    </footer>
 </body>
 </html>

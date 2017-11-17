@@ -4,7 +4,7 @@
     ViewBag.Title = "Home";
 }
 
-<h1>Welcome!</h1>
+<h1>All Restaurants</h1>
 
 @foreach (var restaurant in Model.Restaurants)
 {
@@ -12,5 +12,5 @@
 }
 
 <div>
-    <a asp-action="Create">Create</a>
+    <a class="btn btn-primary" asp-action="Create">Create</a>
 </div>
