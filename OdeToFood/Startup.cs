@@ -33,7 +33,7 @@ namespace OdeToFood
             services.AddMvc();
             services.AddSingleton(Configuration);
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddScoped<IRestaurantData, SqlRestaurantData>();
+            services.AddScoped<IRestaurantData, InMemoryRestaurantData>();
             services.AddDbContext<OdeToFoodDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("OdeToFood")));
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<OdeToFoodDbContext>();
@@ -62,7 +62,7 @@ namespace OdeToFood
             }
 
             app.UseFileServer()
-               .UseBowerComponents(env.ContentRootPath)
+               .UseNodeModules(env.ContentRootPath)
                .UseIdentity()
                .UseMvc(ConfigureRoutes);
         }
